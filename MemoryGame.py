@@ -12,7 +12,6 @@ def generate_sequence(difficulty):
         list_A.append(x)
         print(list_A)
     time.sleep(3)
-    print(' \n' * 1000)
     os.system('cls' if os.name == 'nt' else 'clear')
 
 

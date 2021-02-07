@@ -1,6 +1,17 @@
 import datetime
 import pymysql
 
+def get():
+    conn = pymysql.connect(host='remotemysql.com', port=3306, user='Q2PbjAC1nT', passwd='WRYn22HLYY', db='Q2PbjAC1nT')
+    cursor = conn.cursor()
+    conn.autocommit(True)
+    (cursor.execute("SELECT * FROM Q2PbjAC1nT.Game;"))
+    result = cursor.fetchall()
+    return result
+    cursor.close()
+    conn.close()
+
+
 
 def add_score(difficulty):
     conn = pymysql.connect(host='remotemysql.com', port=3306, user='Q2PbjAC1nT', passwd='WRYn22HLYY', db='Q2PbjAC1nT')
@@ -34,4 +45,6 @@ def add_score(difficulty):
 
 
 
-
+#
+# f = open("C:\\Users\\l1313\\Desktop\\New folder\\HEllo.txt", "r")
+# print(f.readline())
