@@ -7,10 +7,13 @@ def get():
     conn.autocommit(True)
     (cursor.execute("SELECT * FROM Q2PbjAC1nT.Game;"))
     result = cursor.fetchall()
-    return result
+    a=len(result)
+    b=result[a - 1]
+    print(b[1])
+    score = str(b[1])
+    return score
     cursor.close()
     conn.close()
-
 
 
 def add_score(difficulty):
@@ -22,6 +25,7 @@ def add_score(difficulty):
     ten=len(result)
     if ten != 0:
         for i in result[ten-1]:
+            print(i)
             point=i +difficulty
         id = (cursor.execute("SELECT id FROM Q2PbjAC1nT.Game;"))
         id = id + 1
@@ -45,6 +49,3 @@ def add_score(difficulty):
 
 
 
-#
-# f = open("C:\\Users\\l1313\\Desktop\\New folder\\HEllo.txt", "r")
-# print(f.readline())

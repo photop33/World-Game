@@ -9,7 +9,7 @@ def score_server():
     ss=get()
     print(ss)
     try:
-        score = open("C:\\Users\\l1313\\Desktop\\New folder\\HEllo.txt", "r")
+        score = ss
 
     except BaseException as e:
         return """<html>
@@ -28,7 +28,7 @@ def score_server():
             <title>Scores Game</title>
         </head>
         <body>
-                <h1>The score is <div id="score">""" + str(ss) + """</div></h1>
+                <h1>The score is  <div id="score">""" + str(ss) + """</div></h1>
         </body>
     </html>"""
 
