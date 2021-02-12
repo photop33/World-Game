@@ -1,4 +1,23 @@
 pipeline {
+    agent any
+    stages {
+        stage('checkout') {
+            steps {
+                script {
+                bat 'docker build -t 230 .'
+                bat 'start/min docker run -p 8777:8080 20'
+                bat 'python C:\\Users\\l1313\\.jenkins\\workspace\\Game-World\\e2e.py'
+                bat 'docker stop 20'
+               }
+
+            }
+        }
+    }
+}
+
+
+
+#pipeline {
     agent any
     stages {
         stage('build') {
