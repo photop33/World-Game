@@ -4,12 +4,12 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                bat 'docker build -t 22 .'}
+                bat 'docker build -t 20 .'}
                }
             }
         stage('run') {
             steps {
-                script {bat 'start/min docker run -p 8777:8080 22'}
+                script {bat 'start/min docker run -p 8777:8080 20'}
                }
             }
         stage('e2e') {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('stop') {
             steps {
-                script {bat 'docker stop 22'}
+                script {bat 'docker stop 20'}
             }
         }
     }
