@@ -1,5 +1,5 @@
 FROM python:latest
-ADD MainScore.py "C:\Users\l1313\.jenkins\workspace\Game-World\app"
+ADD MainScore.py /
 RUN pip install flask
 CMD [ "python", "\MainScore.py" ]
 
