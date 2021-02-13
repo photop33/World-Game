@@ -17,7 +17,6 @@ pipeline {
                 script {bat 'python C:\\Users\\l1313\\.jenkins\\workspace\\Game-World\\e2e.py'}
             } 
         }
-    }
         stage('Test') {  
             steps {  
                 bat 'echo "Fail!"; exit 1'  
@@ -40,7 +39,8 @@ pipeline {
                 echo 'This will run only if the state of the Pipeline has changed'  
                 echo 'For example, if the Pipeline was previously failing but is now successful'  
             }  
-        }  
+        }
+    }
 }
         
 
