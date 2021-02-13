@@ -17,10 +17,6 @@ pipeline {
                 script {bat 'python C:\\Users\\l1313\\.jenkins\\workspace\\Game-World\\e2e.py'}
             }
         }
-        stage('stop') {
-            steps {
-                script {bat 'docker kill 20'}
-            }
-        }
+        
     }
 }
