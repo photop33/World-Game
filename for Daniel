@@ -3,7 +3,7 @@ Obtained Jenkinsfile from git https://github.com/photop33/World-Game
 Running in Durability level: MAX_SURVIVABILITY
 [Pipeline] Start of Pipeline
 [Pipeline] node
-Running on Jenkins in C:\Users\l1313\.jenkins\workspace\Game-World@2
+Running on Jenkins in C:\Users\l1313\.jenkins\workspace\Game-World
 [Pipeline] {
 [Pipeline] stage
 [Pipeline] { (Declarative: Checkout SCM)
@@ -19,11 +19,11 @@ Fetching upstream changes from https://github.com/photop33/World-Game
  > git --version # 'git version 2.30.0.windows.2'
  > git.exe fetch --tags --force --progress -- https://github.com/photop33/World-Game +refs/heads/*:refs/remotes/origin/* # timeout=10
  > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
-Checking out Revision dcad445b6a36226a4f0656116635cfba79d29314 (refs/remotes/origin/master)
+Checking out Revision 7275e1fcb71bbc5652ec4c3a9a2ec89e46b0d1d7 (refs/remotes/origin/master)
  > git.exe config core.sparsecheckout # timeout=10
- > git.exe checkout -f dcad445b6a36226a4f0656116635cfba79d29314 # timeout=10
+ > git.exe checkout -f 7275e1fcb71bbc5652ec4c3a9a2ec89e46b0d1d7 # timeout=10
 Commit message: "Update Jenkinsfile"
- > git.exe rev-list --no-walk 11bee437e0260145fe92b9c31fa700bd178e381c # timeout=10
+ > git.exe rev-list --no-walk 427a7090f26ddc0dfd1924bf26d1bf5ac679930e # timeout=10
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] withEnv
@@ -34,8 +34,8 @@ Commit message: "Update Jenkinsfile"
 [Pipeline] {
 [Pipeline] bat
 
-C:\Users\l1313\.jenkins\workspace\Game-World@2>docker build -t 20 . 
-Sending build context to Docker daemon  357.4kB
+C:\Users\l1313\.jenkins\workspace\Game-World>docker build -t 20 . 
+Sending build context to Docker daemon  450.6kB
 
 Step 1/7 : FROM python:latest
  ---> 2a93c239d591
@@ -70,7 +70,7 @@ SECURITY WARNING: You are building a Docker image from Windows against a non-Win
 [Pipeline] {
 [Pipeline] bat
 
-C:\Users\l1313\.jenkins\workspace\Game-World@2>start/min docker run -p 8777:8080 20 
+C:\Users\l1313\.jenkins\workspace\Game-World>start/min docker run -p 8777:8080 20 
 [Pipeline] }
 [Pipeline] // script
 [Pipeline] }
@@ -81,11 +81,31 @@ C:\Users\l1313\.jenkins\workspace\Game-World@2>start/min docker run -p 8777:8080
 [Pipeline] {
 [Pipeline] bat
 
-C:\Users\l1313\.jenkins\workspace\Game-World@2>python C:\Users\l1313\.jenkins\workspace\Game-World\e2e.py 
+C:\Users\l1313\.jenkins\workspace\Game-World>python C:\Users\l1313\.jenkins\workspace\Game-World\e2e.py 
 True
 0
 [Pipeline] }
 [Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] bat
+
+C:\Users\l1313\.jenkins\workspace\Game-World>echo "Fail!"; exit 1 
+"Fail!"; exit 1
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+This will always run
+[Pipeline] echo
+This will run only if the state of the Pipeline has changed
+[Pipeline] echo
+For example, if the Pipeline was previously failing but is now successful
+[Pipeline] echo
+This will run only if successful
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] }
