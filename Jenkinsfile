@@ -19,7 +19,7 @@ pipeline {
         }
         stage('stop') {
             steps {
-                script {bat 'docker stop 20'}
+                script {bat 'docker kill 20'}
             }
         }
     }
