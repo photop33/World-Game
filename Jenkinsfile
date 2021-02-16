@@ -9,7 +9,9 @@ pipeline {
             }
         stage('run') {
             steps {
-                script {bat 'start/min docker run -p 8777:8080 19'}
+                script {
+                    bat 'echo hello-world'
+                    bat 'start/min docker run -p 8777:8080 19'}
                }
             }
         stage('e2e') {
