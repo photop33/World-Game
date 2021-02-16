@@ -1,1 +1,1 @@
-docker run -d -p 80:80 --name lior:test
+docker run -d -p 80:80 --name lior:test 
