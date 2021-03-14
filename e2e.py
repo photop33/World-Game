@@ -3,7 +3,7 @@
 
 def test_scores_service(app_url):
     from selenium import webdriver
-    driver = webdriver.Chrome("C:\\Users\\l1313\\Desktop\\chromedriver.exe")
+    driver = webdriver.Chrome("C:\\Users\\l1313\\.jenkins\\workspace\\Game-World\\chromedriver.exe")
     driver.get(app_url)
     score=driver.find_element_by_xpath("/html/body/h1/div").text
     for i in range(0,1000):
