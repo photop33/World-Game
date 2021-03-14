@@ -4,19 +4,25 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                bat 'docker build -t 19 .'}
+                bat 'docker build -t \"$BUILD_NUMBER\" .'}
+                bat 'echo docker build success'
                }
             }
         stage('run') {
             steps {
                 script {
-                    bat 'echo hello-world'
-                    bat 'start/min docker run -p 8777:8080 19'}
+                    bat 'start/min docker run -p 8777:8080 19'
+                    bat 'echo docker run'
+                }
                }
             }
         stage('e2e') {
             steps {
-                script {bat 'python C:\\Users\\l1313\\.jenkins\\workspace\\Game-World\\e2e.py'}
+                script {
+                    bat 'python C:\\Users\\l1313\\.jenkins\\workspace\\Game-World\\e2e.py'
+                    bat 'echo e2e.py'
+                }
+                
             } 
         }
         stage('Test') {  
