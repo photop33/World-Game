@@ -19,7 +19,7 @@ pipeline {
         stage('build dockerdocker ompose ') {
             steps {
                 script {
-                bat "docker-compose up"
+                bat "docker-compose up -d"
                 bat 'echo docker-compose up success'
                  }
                }
