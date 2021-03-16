@@ -9,14 +9,13 @@ pipeline {
                  }
                }
             }
-         stage('set version') { 	
+        stage('set version') { 	
             steps {	
                 bat "echo IMAGE_TAG=${BUILD_NUMBER} > .env"   
-		bat "more .env"
+	          	bat "more .env"
                  }
                }
-            }
-        stage('build dockerdocker-compose ') {
+        stage('build dockerdocker ompose ') {
             steps {
                 script {
                 bat "docker-compose up"
@@ -45,7 +44,6 @@ pipeline {
                 bat 'echo "Fail!"; exit 1'  
                  }
                }
-            }
       post {  
             always {  
                 echo 'This will always run'  
@@ -64,6 +62,8 @@ pipeline {
                 echo 'For example, if the Pipeline was previously failing but is now successful'  
             }  
         }
+    }
 }
+
         
 
