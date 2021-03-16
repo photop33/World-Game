@@ -21,6 +21,7 @@ pipeline {
                 script {
 		    bat "start/min docker run -p 8777:877 \"world-game:$BUILD_NUMBER\""
                     bat 'echo docker run'
+		    bat 'python e2e.py'
                  }
                }
             }
@@ -35,7 +36,7 @@ pipeline {
         stage('e2e') {
             steps {
                 script {
-                    bat 'python C:\\Users\\l1313\\.jenkins\\workspace\\Game-World\\e2e.py'
+                    bat 'python e2e.py'
                     bat 'echo e2e.py'
                  }
                }
