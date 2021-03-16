@@ -1,11 +1,14 @@
 pipeline {
     agent any
+    environment { 
+	    number=$BUILD_NUMBER
+
     stages {
         stage('build docker ') {
             steps {
                 script {
                 bat "docker build -t \"$BUILD_NUMBER\" ."
-                bat 'echo docker build success'
+                bat 'echo docker number success'
                  }
                }
             }
@@ -19,6 +22,7 @@ pipeline {
 	stage('run') {
             steps {
                 script {
+			
                     bat 'docker run -p 8777:8777 \"$BUILD_NUMBER\"'
                     bat 'echo docker run'
                  }
