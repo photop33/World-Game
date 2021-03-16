@@ -5,7 +5,8 @@ pipeline {
             steps {
                 script {
                 bat "docker build -t \"$BUILD_NUMBER\" ."
-                bat "docker-compose up"}
+                bat 'docker run  $BUILD_NUMBER' 
+                bat "docker-compose up"
                 bat 'echo docker-compose up success'
                }
             }
