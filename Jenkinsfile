@@ -27,7 +27,7 @@ pipeline {
         stage('run') {
             steps {
                 script {
-                    bat 'start/min docker run -v myvol:-v /var/jenkins_home jenkins -p 8777:8080 $BUILD_NUMBER'
+                    bat 'start/min docker run  -p 8777:8777 $BUILD_NUMBER'
                     bat 'echo docker run'
                  }
                }
