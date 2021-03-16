@@ -2,8 +2,9 @@ version: '3'
 services:
  web:
     build: .
-    image: "123":"latest"
     ports:
      - "8777:8080"
     volume:
      - ./code
+ redis:
+     image: "123":"latest"
