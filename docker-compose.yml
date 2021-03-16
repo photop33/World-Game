@@ -1,7 +1,8 @@
 version: '3'
 services:
-    image: "123":"latest"
+ web:
     build: .
+    image: "123":"latest"
     ports:
      - "8777:8080"
     volume:
