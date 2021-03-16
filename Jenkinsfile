@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment { 
-	    number=$BUILD_NUMBER
+	    number = "$BUILD_NUMBER"
     }
     stages {
         stage('build docker ') {
