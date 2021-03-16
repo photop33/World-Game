@@ -6,6 +6,7 @@ COPY Score.py /
 RUN pip install pymysql
 RUN pip install flask
 RUN pip install selenium
+RUN make /code
 CMD [ "python", "MainScore.py" ]
 
 
