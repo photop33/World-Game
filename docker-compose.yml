@@ -1,6 +1,6 @@
 version: '3'
 services:
-    image: "$BUILD_NUMBER:latest"
+    image: "123":"latest"
     build: .
     ports:
      - "8777:8080"
