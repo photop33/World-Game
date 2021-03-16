@@ -12,16 +12,16 @@ pipeline {
          stage('set version') { 	
             steps {	
                 bat "echo IMAGE_TAG=${BUILD_NUMBER} > .env"   
-			    bat "more .env"
-            }	
-        }
-    }
+		bat "more .env"
+                 }
+               }
+            }
         stage('build docker ') {
             steps {
                 script {
                 bat "docker-compose up"
                 bat 'echo docker-compose up success'
-                }
+                 }
                }
             }
         stage('run') {
@@ -29,7 +29,7 @@ pipeline {
                 script {
                     bat 'start/min docker run -v myvol:-v /var/jenkins_home jenkins -p 8777:8080 $BUILD_NUMBER'
                     bat 'echo docker run'
-                }
+                 }
                }
             }
         stage('e2e') {
@@ -37,16 +37,15 @@ pipeline {
                 script {
                     bat 'python C:\\Users\\l1313\\.jenkins\\workspace\\Game-World\\e2e.py'
                     bat 'echo e2e.py'
-                }
-                
-            } 
-        }
+                 }
+               }
+            }
         stage('Test') {  
             steps {  
                 bat 'echo "Fail!"; exit 1'  
-                }  
-            }  
-       }
+                 }
+               }
+            }
       post {  
             always {  
                 echo 'This will always run'  
