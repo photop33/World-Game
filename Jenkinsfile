@@ -21,7 +21,6 @@ pipeline {
                 script {
 		    bat "start/min docker run -p 8777:877 \"world-game:$BUILD_NUMBER\""
                     bat 'echo docker run'
-		    bat 'python e2e.py'
                  }
                }
             }
