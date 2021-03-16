@@ -19,7 +19,7 @@ pipeline {
 	stage('run') {
             steps {
                 script {
-                    bat 'docker run -p 8777:8777 \"$BUILD_NUMBER\'
+                    bat 'docker run -p 8777:8777 \"$BUILD_NUMBER\."'
                     bat 'echo docker run'
                  }
                }
