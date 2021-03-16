@@ -16,19 +16,19 @@ pipeline {
                 bat "echo secsses  ${BUILD_NUMBER}"
 	    }
                }
+	stage('run') {
+            steps {
+                script {
+                    bat 'docker run -p 8777:8777 $BUILD_NUMBER'
+                    bat 'echo docker run'
+                 }
+               }
+            }
         stage('build dockerdocker ompose ') {
             steps {
                 script {
                 bat "docker-compose up -d"
                 bat 'echo docker-compose up success'
-                 }
-               }
-            }
-        stage('run') {
-            steps {
-                script {
-                    bat 'docker run  -p 8777:8777 $BUILD_NUMBER'
-                    bat 'echo docker run'
                  }
                }
             }
