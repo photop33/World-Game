@@ -5,5 +5,5 @@ services:
     image: ${IMAGE_TAG}:latest
     ports:
      - "8777:8080"
-    volume:
+    volumes:
      - ./code
