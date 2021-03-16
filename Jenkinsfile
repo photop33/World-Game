@@ -34,7 +34,7 @@ pipeline {
             }
         stage('e2e') {
             steps {
-                script {
+		    script {
                     bat 'python e2e.py'
                     bat 'echo e2e.py'
                  }
