@@ -7,7 +7,7 @@ pipeline {
         stage('build docker ') {
             steps {
                 script {
-                bat "docker build -t \worldgame:"$BUILD_NUMBER\" ."
+                bat "docker build -t worldgame:"$BUILD_NUMBER" ."
                 bat 'echo docker number success'
                  }
                }
