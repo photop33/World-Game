@@ -1,14 +1,11 @@
 pipeline {
     agent any
-    environment { 
-	    number = "$BUILD_NUMBER"
-    }
     stages {
         stage('build docker ') {
             steps {
                 script {
-                bat "docker build -t worldgame:"$BUILD_NUMBER" ."
-                bat 'echo docker number success'
+                dockerImage = docker.build "world-game" + ":$BUILD_NUMBER"  
+		bat 'echo docker number success'
                  }
                }
             }
