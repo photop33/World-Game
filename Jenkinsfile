@@ -8,6 +8,7 @@ pipeline {
                 bat 'docker run  $BUILD_NUMBER' 
                 bat "docker-compose up"
                 bat 'echo docker-compose up success'
+                }
                }
             }
         stage('run') {
