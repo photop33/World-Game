@@ -44,6 +44,7 @@ pipeline {
                 bat 'echo "Fail!"; exit 1'  
                  }
                }
+            }
       post {  
             always {  
                 echo 'This will always run'  
