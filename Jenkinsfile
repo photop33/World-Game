@@ -1,10 +1,24 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('build docker ') {
             steps {
                 script {
                 bat "docker build -t \"$BUILD_NUMBER\" ."
+                bat 'echo docker build success'
+                 }
+               }
+            }
+         stage('set version') { 	
+            steps {	
+                bat "echo IMAGE_TAG=${BUILD_NUMBER} > .env"   
+			    bat "more .env"
+            }	
+        }
+    }
+        stage('build docker ') {
+            steps {
+                script {
                 bat "docker-compose up"
                 bat 'echo docker-compose up success'
                 }
