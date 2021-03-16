@@ -9,6 +9,6 @@ RUN pip install selenium
 RUN mkdir /code
 CMD [ "python", "MainScore.py" ]
 
-
+EXPOSE 8777
 
 
