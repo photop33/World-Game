@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
 			
-                    bat 'docker run -p 8777:8777 \"$BUILD_NUMBER:latest"'
+                    bat 'docker run -p 8777:8777  "worldgame":"$BUILD_NUMBER"
                     bat 'echo docker run'
                  }
                }
