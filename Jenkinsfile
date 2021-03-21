@@ -40,6 +40,14 @@ pipeline {
                  }
                }
             }
+	 stage('create helm chart') {
+            steps {
+		    script {
+                    bat 'helm create world-game'
+                    bat 'echo helm crete!'
+                 }
+               }
+            }
         stage('Test') {  
             steps {  
                 bat 'echo "Fail!"; exit 1'  
