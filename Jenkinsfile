@@ -46,7 +46,21 @@ pipeline {
                     }	
                 }  	
             }	
-        }	
+        }
+	 stage ('Deploy helm'){
+            steps{
+                script{
+                    bat """
+		          minikube start
+                          helm install test --debug --set image.repostitory=photop33/word-game,image.tag=${BUILD_NUMBER}  world-game-0.1.0.tgz 
+		          //helm install word-game-test --dry-run  --debug --set image.repostitory=photop33/word-game,image.tag=${BUILD_NUMBER} test'
+		          helm list --all
+		          minikube service list 
+			  echo success Deploy helm
+		        """
+		    }  
+                }
+            }
         stage('e2e') {
             steps {
 		    script {
