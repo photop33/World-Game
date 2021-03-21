@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    environment { 
+        registry = "photop/word-game" 
+        registryCredential = 'docker_hub'
+        dockerImage = ""
+    } 
     stages {
         stage('build docker ') {
             steps {
@@ -32,6 +37,16 @@ pipeline {
                  }
                }
             }
+	 stage('build and push image') { 	
+            steps { 	
+                script {
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    docker.withRegistry('', registryCredential) {	
+                    dockerImage.push() 	
+                    }	
+                }  	
+            }	
+        }	
         stage('e2e') {
             steps {
 		    script {
